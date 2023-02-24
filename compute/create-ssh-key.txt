@@ -1,0 +1,2 @@
+ssh-keygen -C AWS-Golden-Key -f ~/.ssh/aws-golden-key -t ed25519
+
