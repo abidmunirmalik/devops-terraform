@@ -1,3 +1,11 @@
+# Provider variables
+variable "profile" {
+  type = string
+}
+variable "region" {
+  type = string
+}
+
 variable "prefix" {
   type = string
 }

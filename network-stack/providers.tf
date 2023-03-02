@@ -13,8 +13,8 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  profile = "devops"
-  region  = "us-east-1"
+  profile = var.profile
+  region  = var.region
 
   default_tags {
     tags = {
