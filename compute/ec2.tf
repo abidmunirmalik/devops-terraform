@@ -5,8 +5,49 @@ resource "aws_instance" "webserver" {
   vpc_security_group_ids      = [aws_security_group.sg.id]
   subnet_id                   = data.aws_subnet.public_subnet_1a.id
   key_name                    = aws_key_pair.keypair.id
-  
+
   tags = {
     "Name" = "${var.prefix}-${var.ec2_name}"
+  }
+}
+
+resource "null_resource" "trigger_on_instance_id" {
+  triggers = {
+    id     = aws_instance.webserver.id
+  }
+  provisioner "local-exec" {
+    command    = "echo ${var.ec2_name}:${aws_instance.webserver.private_ip} >> ec2s.txt"
+    on_failure = continue
+  }
+
+  provisioner "file" {
+    source      = "httpd.sh"
+    destination = "/tmp/httpd.sh"
+    on_failure  = continue
+  }
+  connection {
+    type        = "ssh"
+    host        = aws_instance.webserver.public_ip
+    user        = "ec2-user"
+    private_key = file("~/.ssh/aws-golden-key")
+    timeout     = "5m"
+  }
+
+  provisioner "remote-exec" {
+    inline     = ["chmod u+x /tmp/httpd.sh", "/tmp/httpd.sh"]
+    on_failure = continue
+  }
+
+  provisioner "remote-exec" {
+    inline     = ["sudo hostnamectl set-hostname ${var.ec2_name}"]
+    on_failure = continue
+  }
+}
+
+resource "null_resource" "free_fly" {
+  
+  provisioner "local-exec" {
+    command    = "I am flying free"
+    on_failure = continue
   }
 }

@@ -1,3 +1,5 @@
+profile    = "devops"
+region     = "us-east-1"
 key_name   = "aws-golden-key"
 public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHRkb4F2zH9gyXHzItguVMpVqZc/Sjj4dZM1ahGSIVV7 AWS-Golden-Key"
 prefix     = "lab"

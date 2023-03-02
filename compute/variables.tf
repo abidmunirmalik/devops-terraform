@@ -1,3 +1,11 @@
+# Region variables
+variable "profile" {
+  type = string
+}
+variable "region" {
+  type = string
+}
+
 #SSH Keys variables
 variable "key_name" {
   type = string
