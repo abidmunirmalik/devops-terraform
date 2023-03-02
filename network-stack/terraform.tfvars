@@ -1,9 +1,9 @@
-profile          = "devops"
-region           = "us-east-1"
-vpc_cidr_block   = "192.168.0.0/16"
-vpc_name         = "main-vpc"
-igw_name         = "main-igw"
-prefix           = "lab"
+profile        = "devops"
+region         = "us-east-1"
+vpc_cidr_block = "192.168.0.0/16"
+vpc_name       = "main-vpc"
+igw_name       = "main-igw"
+prefix         = "lab"
 
 
 azs          = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d"]

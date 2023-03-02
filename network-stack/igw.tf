@@ -4,4 +4,5 @@ resource "aws_internet_gateway" "igw" {
   tags = {
     "Name" = "${var.prefix}-${var.igw_name}"
   }
+  depends_on = [aws_vpc.main_vpc]
 }
