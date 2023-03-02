@@ -1,7 +1,8 @@
 **/.terraform/*
-.terraform
-.tfstate
-*.tfstate.*
-*.tfvars
+**/terraform.tfstate
+**/*.tfstate.*
+
+./network-stack/terraform.tfstate*
+./compute/terraform.tfstate*
 
 
