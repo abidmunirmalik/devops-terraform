@@ -40,3 +40,8 @@ variable "instance_type" {
 variable "ec2_name" {
   type = string
 }
+
+# EBS Variables
+variable "ebs_volumes" {
+  type = list(any)
+}

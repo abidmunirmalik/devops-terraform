@@ -32,3 +32,23 @@ ingress_rules = [
 # EC2 Variables
 instance_type = "t2.micro"
 ec2_name      = "webserver"
+
+# EBS Volumes
+ebs_volumes = [
+    {
+      volume_size = "1"
+      volume_name = "web"
+      device_name = "/dev/sdb"
+      type        = "gp3"
+      iops        = 3000
+      throughput  = 125
+    },
+    {
+      volume_size = "1"
+      volume_name = "data"
+      device_name = "/dev/sdc"
+      type        = "gp3"
+      iops        = 3000
+      throughput  = 125
+    }
+]
