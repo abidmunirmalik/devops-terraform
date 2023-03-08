@@ -1,0 +1,9 @@
+vpc_name     = "do-nyc3-vpc"
+vpc_cidr     = "192.168.1.0/24"
+vpc_region   = "nyc3"
+project_name = "devops"
+ssh_key_name = "do-golden-key" 
+image_slug   = "centos-7-x64"
+droplet_name = "webserver"
+droplet_size = "s-1vcpu-1gb"
+db_hosts     = ["primary", "replica"]

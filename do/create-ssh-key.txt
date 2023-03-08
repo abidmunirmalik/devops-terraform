@@ -1,0 +1,1 @@
+ssh-keygen -C DO-Golden-Key -f ~/.ssh/do-golden-key -t ed25519
