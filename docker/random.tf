@@ -15,7 +15,7 @@ output "random_integer_generated" {
 
 resource "random_password" "r_password" {
     length = 8
-    special = true
+    special = false
 }
 output "random_password_generated" {
     value     = random_password.r_password.result

@@ -11,4 +11,8 @@ resource "docker_container" "nginx_container" {
     internal = 80
     external = 80
   }
+  volumes {
+    host_path      = "/Users/malik/course/devops-terraform/docker/html"
+    container_path = "/usr/share/nginx/html"
+  }
 }
