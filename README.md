@@ -12,6 +12,10 @@
 * Terraform configuration for this project can be found in `compute` folder.
 
 
+### WebServer Project
+* Terraform configuration for this project can be found in `webserver` folder.
+
+
 ### Digital Ocean
 * Terraform configuration for this project can be found in `do` folder.
 
@@ -26,3 +30,7 @@
 
 ### Docker
 * Terraform configuration for this project can be found in `docker` folder.
+
+
+### Managing Terraform Remote State
+* Terraform configuration for this project can be found in `state` folder.
